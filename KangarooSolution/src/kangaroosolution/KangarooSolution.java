@@ -22,24 +22,24 @@ public class KangarooSolution {
     }
 
     static String kangaroo(int x1, int v1, int x2, int v2) {
-        int firstAdd = 0;
-        int secondAdd = 0;
+        int noOfMeterToJumbFirst = 0;
+        int noOfMeterToJumbSecond = 0;
         int noOfTimeJumpFirstKangaroo = 0;
         int noOfTimeJumpSecondKangaroo = 0;
         String returnValue = "NO";
         for (int i = 0; i < 10000; i++) {
             if (i == 0) {
-                firstAdd = x1 + v1;
-                secondAdd = x2 + v2;
+                noOfMeterToJumbFirst = x1 + v1;
+                noOfMeterToJumbSecond = x2 + v2;
                 noOfTimeJumpFirstKangaroo = i;
                 noOfTimeJumpSecondKangaroo = i;
             } else {
-                firstAdd += v1;
-                secondAdd += v2;
+                noOfMeterToJumbFirst += v1;
+                noOfMeterToJumbSecond += v2;
                 noOfTimeJumpSecondKangaroo = i;
                 noOfTimeJumpFirstKangaroo = i;
             }
-            if (firstAdd == secondAdd) {
+            if (noOfMeterToJumbFirst == noOfMeterToJumbSecond) {
                 if (noOfTimeJumpFirstKangaroo == noOfTimeJumpSecondKangaroo) {
                     returnValue = "YES";
                     break;
